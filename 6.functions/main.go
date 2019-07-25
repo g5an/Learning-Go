@@ -43,4 +43,16 @@ func main() {
 	//可变参数调用
 	a2, b2 := intsum2(10, 20, 30, 20, 40)
 	fmt.Println(a2, b2)
+
+	//闭包调用
+	f := funname("shahe")
+	f("xiao")
+}
+
+//闭包:内层函数调用外层函数的变量
+func funname(varname1 string) func(returnname string) {
+	return func(returnname string) {
+		fmt.Printf("hello,%v", returnname)
+		fmt.Println(varname1)
+	}
 }
